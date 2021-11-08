@@ -1,0 +1,20 @@
+<h1>Stupid Coaching</h1>
+<h2>
+  <%= params[:question] %>
+  <p>-You</p>
+</h2>
+
+<% if params[:question] === 'I am going to work' %>
+  <h2> Great!
+    <p>-Your Coach</p>
+  </h2>
+<% elsif /\?$/.match(params[:question]) %>
+  <h2> Silly question, get dressed and go to work!
+    <p>-Your Coach</p>
+  </h2>
+<% else %>
+  <h2> I don't care, get dressed and go to work!
+    <p>-Your Coach</p>
+  </h2>
+<% end %>
+<%= link_to "Ask a new question", ask_path %>
